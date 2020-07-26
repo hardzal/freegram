@@ -9,6 +9,7 @@
 ⌨️ (20:00) Migrations and Setting Up SQLite
 ⌨️ (26:00) Designing the UI from Instagram
 ⌨️ (42:12) Adding Username to the Registration Flow
+----------
 ⌨️ (58:35) Creating the Profiles Controller
 ⌨️ (1:04:00) RESTful Resource Controller
 ⌨️ (1:09:10) Passing Data to the View
@@ -18,7 +19,9 @@
 ⌨️ (1:30:00) Adding Posts to the Database & Many To Many Relationship
 ⌨️ (2:04:24) Creating Through a Relationship
 ⌨️ (2:08:12) Uploading/Saving the Image to the Project
+    - php artisan storage:link // to connect public to storage
 ⌨️ (2:19:19) Resizing Images with Intervention Image PHP Library
+    - composer require intervention/image
 ⌨️ (2:27:42) Route Model Binding
 ⌨️ (2:31:48) Editing the Profile
 ⌨️ (2:46:46) Restricting/Authorizing Actions with a Model Policy
@@ -36,3 +39,10 @@
 ⌨️ (4:11:44) Sending Emails to New Registered Users
 ⌨️ (4:21:51) Wrapping Up
 ⌨️ (4:22:37) Closing Remarks & What's Next In your Learning
+-----------------
+
+## Feature
+- [x] Login 
+- [x] Register
+- [ ] CRUD POST
+- [ ] CRUD Profile

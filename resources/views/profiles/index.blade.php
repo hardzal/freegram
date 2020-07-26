@@ -7,22 +7,24 @@
             <img src='{{ url('images/prof.jpg')}}' class="rounded-circle"/>
        </div>
        <div class="col-md-9">
-           <div class="row">
-                <div class="col-md-4">
-                    <h1>@aimin.official</h1>
-                    <a href="{{ route('profile.edit', auth()->user()->id) }}">Edit Profile</a>
-                    <a href="{{ route('post.create') }}">Add New Post</a>
+           <div class="d-flex justify-content-between">
+                <div>
+                    <h1>{{ @$user->username ? $user->username : auth()->user()->username }}</h1>
                 </div>
-                <div class="col-md-6">
+                <div>
                     <button>Message</button>
                     <button>Follow</button>
                     <button>Related</button>
                     <button>Option</button>
                 </div>
            </div>
+            <div class="d-flex justify-content-between align-items-baseline">
+                <a href="{{ route('profile.edit') }}">Edit Profile</a>
+                <a href="{{ route('post.create') }}">Add New Post</a>
+            </div>
            <div class="row">
                 <div class="col-md-4">
-                    <strong>100</strong> Posts
+                    <strong>{{ $user->posts->count() }}</strong> Posts
                 </div>
                 <div class="col-md-4">
                     <strong>500</strong> Followers
@@ -33,11 +35,14 @@
            </div>
            <div class="row">
                <div class="col">
-                    <p>Caption here</p>
+                   <p>{{ @$user->profile->title }}</p>
+               </div>
+               <div class="col">
+                    <p>{{ @$user->profile->description }}</p>
                </div>
            </div>
            <div class="row">
-               <div class="col"><a href="#">https://url.id</a></div>
+               <div class="col"><a href="#">{{ @$user->profile->url }}</a></div>
            </div>
        </div>
 
@@ -47,15 +52,11 @@
         <div class="px-5">Tagged</div>
    </div><hr/>
    <div class="row pt-5">
-       <div class="col-md-4">
-            <img src="{{ url('images/posts/aimin_1.jpg') }}" alt="" class="w-100"/>
-       </div>
-       <div class="col-md-4">
-            <img src="{{ url('images/posts/aimin_1.jpg') }}" alt="" class="w-100"/>
-       </div>
-       <div class="col-md-4">
-            <img src="{{ url('images/posts/aimin_1.jpg') }}" alt="" class="w-100"/>
-       </div>
+       @foreach($user->posts as $post)
+        <div class="col-md-4 pb-4">
+            <a href="/p/{{ $post->id }}"><img src="/storage/{{ $post->image }}" alt="" class="w-100 h-100" style="object-fit: cover"/></a>
+        </div>
+       @endforeach
    </div>
 </div>
 @endsection
