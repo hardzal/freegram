@@ -4,7 +4,7 @@
 <div class="container">
    <div class="row">
        <div class="col-md-3 p-5">
-            <img src='{{ url('images/prof.jpg')}}' class="rounded-circle"/>
+            <img src='{{ url('storage') .'/'. $user->profile->avatar}}' class="rounded-circle w-100"/>
        </div>
        <div class="col-md-9">
            <div class="d-flex justify-content-between">
@@ -19,8 +19,10 @@
                 </div>
            </div>
             <div class="d-flex justify-content-between align-items-baseline">
-                <a href="{{ route('profile.edit') }}">Edit Profile</a>
-                <a href="{{ route('post.create') }}">Add New Post</a>
+                @can('update', $user->profile)
+                    <a href="{{ route('profile.edit', auth()->user()->id) }}">Edit Profile</a>
+                    <a href="{{ route('post.create') }}">Add New Post</a>
+                @endcan
             </div>
            <div class="row">
                 <div class="col-md-4">

@@ -4,6 +4,7 @@
     <div class="container">
         <div class="row text-md-center">
             <h3>Edit Profile</h3>
+
         </div>
         <form action="{{ route('profile.update', $user->id) }}" method="POST" enctype="multipart/form-data">
             @csrf

@@ -37,6 +37,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected static function boot() // automatically create profile // https://laravel.com/docs/7.x/eloquent#events
+    {
+        parent::boot();
+
+        static::created(function ($user) {
+            $user->profile()->create([
+                'title' => $user->username,
+                'avatar' => 'images/profiles/default.jpg'
+            ]);
+        });
+    }
+
     public function profile()
     {
         return $this->hasOne(Profile::class);
