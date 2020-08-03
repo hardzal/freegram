@@ -4,7 +4,7 @@
 <div class="container">
    <div class="row">
        <div class="col-md-3 p-5">
-            <img src='{{ url('storage') .'/'. $user->profile->avatar}}' class="rounded-circle w-100"/>
+            <img src='{{ $user->profile->profileImage() }}' class="rounded-circle w-100"/>
        </div>
        <div class="col-md-9">
            <div class="d-flex justify-content-between">
@@ -36,10 +36,10 @@
                 </div>
            </div>
            <div class="row">
-               <div class="col">
-                   <p>{{ @$user->profile->title }}</p>
+               <div class="col-12">
+                   <p class="mb-1"><strong>{{ @$user->profile->title }}</strong></p>
                </div>
-               <div class="col">
+               <div class="col-12">
                     <p>{{ @$user->profile->description }}</p>
                </div>
            </div>

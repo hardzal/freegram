@@ -8,18 +8,12 @@ use Intervention\Image\Facades\Image;
 
 class ProfilesController extends Controller
 {
-    public function __construct()
+    public function index(User $user)
     {
-        $this->middleware('auth');
-    }
-
-    public function index($id = null)
-    {
-        $user = null;
-        if ($id != null) {
-            $user = User::findOrFail($id);
-        } else {
+        if (auth()->check()) {
             $user = User::findOrFail(auth()->user()->id);
+        } else {
+            redirect('home');
         }
 
         return view('profiles.index', compact('user'));
@@ -28,12 +22,12 @@ class ProfilesController extends Controller
     public function show($username)
     {
         $user = User::firstWhere('username', $username);
+
         return view('profiles.show', compact('user'));
     }
 
     public function edit(User $user) //  Route Model Binding
     {
-        // $user->load('profile');
         $this->authorize('update', $user->profile);
         return view('profiles.edit', compact('user'));
     }
