@@ -10,12 +10,13 @@ class ProfilesController extends Controller
 {
     public function index(User $user)
     {
-        if (auth()->check()) {
-            $user = User::findOrFail(auth()->user()->id);
-        } else {
-            redirect('home');
+        if ($user->id == null) {
+            if (auth()->check()) {
+                $user = User::findOrFail(auth()->user()->id);
+            } else {
+                redirect('home');
+            }
         }
-
         return view('profiles.index', compact('user'));
     }
 
@@ -39,7 +40,7 @@ class ProfilesController extends Controller
         $data = request()->validate([
             'title' => 'required',
             'description' => 'required',
-            'url' => 'url',
+            'url' => '',
             'avatar' => 'image'
         ]);
 
