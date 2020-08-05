@@ -12,10 +12,7 @@
                     <h1>{{ @$user->username ? $user->username : auth()->user()->username }}</h1>
                 </div>
                 <div>
-                    <button>Message</button>
-                    <button>Follow</button>
-                    <button>Related</button>
-                    <button>Option</button>
+                    <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
                 </div>
            </div>
             <div class="d-flex justify-content-between align-items-baseline">
@@ -29,10 +26,10 @@
                     <strong>{{ $user->posts->count() }}</strong> Posts
                 </div>
                 <div class="col-md-4">
-                    <strong>500</strong> Followers
+                    <strong>{{ $user->profile->followers->count() }}</strong> Followers
                 </div>
                 <div class="col-md-4">
-                    <strong>5</strong> Following
+                    <strong>{{ $user->following->count() }}</strong> Following
                 </div>
            </div>
            <div class="row">

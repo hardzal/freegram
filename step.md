@@ -32,9 +32,9 @@
 - [x] (3:00:00) Automatically Creating A Profile Using Model Events
  - Using Eloquent Model Events https://laravel.com/docs/7.x/eloquent#events
 - [x] (3:12:56) Default Profile Image
-- [ ] (3:19:48) Follow/Unfollow Profiles Using a Vue.js Component
-- [ ] (3:31:28) Many To Many Relationship
-- [ ] (3:46:33) Calculating Followers Count and Following Count
+- [x] (3:19:48) Follow/Unfollow Profiles Using a Vue.js Component
+- [x] (3:31:28) Many To Many Relationship
+- [x] (3:46:33) Calculating Followers Count and Following Count
 - [ ] (3:48:55) Laravel Telescope
 - [ ] (3:51:44) Showing Posts from Profiles The User Is Following
 - [ ] (4:01:03) Pagination with Eloquent
