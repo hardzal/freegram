@@ -35,14 +35,14 @@
 - [x] (3:19:48) Follow/Unfollow Profiles Using a Vue.js Component
 - [x] (3:31:28) Many To Many Relationship
 - [x] (3:46:33) Calculating Followers Count and Following Count
-- [ ] (3:48:55) Laravel Telescope
-- [ ] (3:51:44) Showing Posts from Profiles The User Is Following
-- [ ] (4:01:03) Pagination with Eloquent
-- [ ] (4:03:25) N + 1 Problem & Solution
-- [ ] (4:05:21) Make Use of Cache for Expensive Query
-- [ ] (4:11:44) Sending Emails to New Registered Users
-- [ ] (4:21:51) Wrapping Up
-- [ ] (4:22:37) Closing Remarks & What's Next In your Learning
+- [x] (3:48:55) Laravel Telescope
+- [x] (3:51:44) Showing Posts from Profiles The User Is Following
+- [x] (4:01:03) Pagination with Eloquent
+- [x] (4:03:25) N + 1 Problem & Solution
+- [x] (4:05:21) Make Use of Cache for Expensive Query
+- [x] (4:11:44) Sending Emails to New Registered Users
+- [x] (4:21:51) Wrapping Up
+- [x] (4:22:37) Closing Remarks & What's Next In your Learning
 -----------------
 
 ## Feature

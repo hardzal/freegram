@@ -23,13 +23,13 @@
             </div>
            <div class="row">
                 <div class="col-md-4">
-                    <strong>{{ $user->posts->count() }}</strong> Posts
+                    <strong>{{ $postCount }}</strong> Posts
                 </div>
                 <div class="col-md-4">
-                    <strong>{{ $user->profile->followers->count() }}</strong> Followers
+                    <strong>{{ $followerCount }}</strong> Followers
                 </div>
                 <div class="col-md-4">
-                    <strong>{{ $user->following->count() }}</strong> Following
+                    <strong>{{ $followingCount }}</strong> Following
                 </div>
            </div>
            <div class="row">
