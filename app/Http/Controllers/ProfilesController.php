@@ -20,6 +20,7 @@ class ProfilesController extends Controller
         }
 
         $follows = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
+
         $postCount = Cache::remember(
             'count.posts.' . $user->id,
             now()->addSeconds(30),

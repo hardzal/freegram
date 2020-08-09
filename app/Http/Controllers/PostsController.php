@@ -22,10 +22,11 @@ class PostsController extends Controller
         return view('posts.index', compact('posts'));
     }
 
-    public function show($id)
+    public function show(Post $post)
     {
-        $post = Post::findOrFail($id);
-        return view('posts.show', compact('post'));
+        $follows = (auth()->user()) ? auth()->user()->following->contains($post->user->id) : false;
+
+        return view('posts.show', compact('post', 'follows'));
     }
 
     public function create()

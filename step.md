@@ -50,4 +50,11 @@
 - [x] Register
 - [x] CRUD POST
 - [x] CRUD Profile
-
+- [x] Follow Action
+- [ ] Search
+- [ ] CRUD Comment 
+- [ ] Multi image upload
+- [ ] Tagged Image
+- [ ] Direct Message to another account
+- [ ] Block / Report an Account
+- [ ] Admin Role
