@@ -5,7 +5,9 @@
         @foreach($posts as $post)
             <div class="row">
                 <div class="col-md-6 offset-3">
-                    <img src="/storage/{{ $post->image }}" alt="" class="img-thumbnail"/>
+                    <a href="/p/{{ $post->id }}">
+                        <img src="/storage/{{ $post->image }}" alt="" class="img-thumbnail"/>
+                    </a>
                 </div>
             </div>
             <div class="row pt-2 pb-3">

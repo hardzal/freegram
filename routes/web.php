@@ -27,5 +27,8 @@ Route::patch('/profile/{user}/update', 'ProfilesController@update')->name('profi
 Route::get('/p/create', 'PostsController@create')->name('post.create');
 Route::post('/p', 'PostsController@store')->name('post.store');
 Route::get('/p/{post}', 'PostsController@show')->name('post.show');
+Route::get('/p/{post}/edit', 'PostsController@edit')->name('post.edit');
+Route::put("/p/{post}", 'PostsController@update')->name('post.update');
+Route::delete("/p/{post}/delete", 'PostsController@destroy')->name('post.delete');
 
 Route::post('/follow/{user}', 'FollowsController@store');

@@ -37,6 +37,10 @@
 
                     </ul>
 
+                    <form method="GET" action="">
+                        <input type="search" placeholder="search" name="search" class="form-control"/>
+                    </form>
+
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->

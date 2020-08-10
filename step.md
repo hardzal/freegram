@@ -51,7 +51,7 @@
 - [x] CRUD POST
 - [x] CRUD Profile
 - [x] Follow Action
-- [ ] Search
+- [ ] Search 
 - [ ] CRUD Comment 
 - [ ] Multi image upload
 - [ ] Tagged Image

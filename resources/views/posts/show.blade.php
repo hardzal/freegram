@@ -20,6 +20,23 @@
                                 <follow-text user-id="{{ $post->user->id }}" follows="{{ $follows }}"></follow-text>
                             </div>
                         </div>
+                        <ul class="navbar-nav ml-3">
+                            <li class="nav-item dropdown">
+                                <a href="#" role="button"  class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a href="{{ route('post.edit', $post->id) }}" class="dropdown-item">Edit</a>
+                                    <form
+                                    action="{{ route('post.delete', $post->id) }}"
+                                    method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" title="Hapus" class="btn-md dropdown-item" onclick="return confirm('Apakah Anda yakin ingin menghapusnya?')">Delete</button>
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                     <div>
                         <p>

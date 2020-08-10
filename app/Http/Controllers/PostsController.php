@@ -36,12 +36,6 @@ class PostsController extends Controller
 
     public function store()
     {
-        // $this->validate($request, [
-        //     'caption' => 'required',
-        //     'image' => 'required'
-        // ]);
-        // Post::create($data);
-
         $data = request()->validate([
             'caption' => 'required',
             'image' => 'required|image'
@@ -63,6 +57,50 @@ class PostsController extends Controller
 
     public function edit(Post $post)
     {
+        $this->authorize('update', $post->user->profile);
+
         return view('posts.edit', compact('post'));
+    }
+
+    public function update(Post $post)
+    {
+        $this->authorize('update', $post->user->profile);
+
+        $data = request()->validate([
+            'caption' => '',
+            'image' => 'image'
+        ]);
+
+        $imagePath = $post->image;
+
+        if (request('image')) {
+            $imagePath = request('image')->store('uploads', 'public');
+
+            if (file_exists('/storage/' . $post->image)) {
+                File::delete('/storage/' . $post->image);
+            }
+
+            $image = Image::make(public_path("storage/" . $imagePath))->fit(1200, 1200);
+            $image->save();
+        }
+
+        $post->caption = $data['caption'];
+        $post->image =  $imagePath;
+        $post->save();
+
+        return redirect('/profile/' . auth()->user()->id);
+    }
+
+    public function destroy(Post $post)
+    {
+        if (file_exists('/storage/' . $post->image)) {
+            File::delete('/storage/' . $post->image);
+        }
+
+        if ($post->delete()) {
+            return redirect('profile')->with('message', 'Berhasil menghapus post!');
+        }
+
+        return redirect('profile')->with('error', 'Gagal menghapus post!');
     }
 }
