@@ -85,4 +85,12 @@ class ProfilesController extends Controller
 
         return redirect()->route('profile.index');
     }
+
+    public function search()
+    {
+    }
+
+    public function results(Request $request)
+    {
+    }
 }

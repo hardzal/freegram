@@ -14,12 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes();
-
 // Route::get('/', 'HomeController@index')->name('home');
 Route::get('/', 'PostsController@index')->name('posts.index');
 
 Route::get('/profile/{user?}', 'ProfilesController@index')->name('profile.index');
-
 Route::get('/profile/u/{username}', 'ProfilesController@show')->name('profile.show');
 Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edit');
 Route::patch('/profile/{user}/update', 'ProfilesController@update')->name('profile.update');

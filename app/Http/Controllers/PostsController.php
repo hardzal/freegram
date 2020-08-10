@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
@@ -13,11 +14,19 @@ class PostsController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $users = auth()->user()->following()->pluck('profiles.user_id');
         // $posts = Post::whereIn('user_id', $users)->orderBy('created_at', 'DESC')->get();
         $posts = Post::whereIn('user_id', $users)->with('user')->latest()->paginate(2);
+
+        if ($request->has("search")) {
+            $keyword = $request->search;
+            $users = User::where('username', 'LIKE', '%' . $request->search . '%')->get();
+            $posts = Post::where('caption', 'LIKE', '%' . $request->search . '%')->get();
+
+            return view('posts.search', compact('posts', 'users', 'keyword'));
+        }
 
         return view('posts.index', compact('posts'));
     }
