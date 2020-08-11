@@ -30,3 +30,7 @@ Route::put("/p/{post}", 'PostsController@update')->name('post.update');
 Route::delete("/p/{post}/delete", 'PostsController@destroy')->name('post.delete');
 
 Route::post('/follow/{user}', 'FollowsController@store');
+
+Route::post('/comments/{post}', 'CommentsController@store')->name('comment.create');
+Route::put('/comments/{post}', 'CommentsController@update')->name('comment.update');
+Route::delete('/comments/{comment}', 'CommentsController@destroy')->name('comment.delete');

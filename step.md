@@ -52,7 +52,7 @@
 - [x] CRUD Profile
 - [x] Follow Action
 - [x] Search 
-- [ ] CRUD Comment 
+- [x] CRUD Comment 
 - [ ] Multi image upload
 - [ ] Tagged Image
 - [ ] Direct Message to another account

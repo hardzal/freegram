@@ -37,7 +37,7 @@
 
                     </ul>
 
-                    <form method="GET" action="">
+                    <form method="GET" action="{{ route('posts.index') }}">
                         <input type="search" placeholder="search" name="search" class="form-control"/>
                     </form>
 

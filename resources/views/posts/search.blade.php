@@ -2,12 +2,13 @@
 
 @section('content')
     <div class="container">
-        <h3>User Result</h3><hr/>
+        <h3>User Result : <em>{{ $keyword }}</em></h3><hr/>
         @if($users->count() == 0)
             <div class="alert alert-primary">
                 <p>Data tidak ditemukan!</p>
             </div>
         @else
+            <div class="alert alert-info"><small>{{ $users->count() }} data ditemukan</small></div>
             @foreach($users as $user)
             <div class="row pt-2 pb-3">
                 <div class="d-flex align-items-center mb-3">
@@ -23,7 +24,11 @@
                     </div>
 
                     <div class="pl-5">
-                        <span>{{ $user->profile->description}}</span>
+                        <span>{{ $user->profile->followers->count() }} Followers</span>
+                    </div>
+
+                    <div class="pl-5">
+                        <span>{{ $user->following->count() }} Following</span>
                     </div>
                 </div>
             </div>
@@ -37,6 +42,7 @@
                 <p>Data tidak ditemukan!</p>
             </div>
         @else
+        <div class="alert alert-info"><small>{{ $posts->count() }} data ditemukan</small></div>
         <div class="row">
             @foreach($posts as $post)
                 <div class="col-md-4 mb-3">
