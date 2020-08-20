@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Freegram
+                    {{ __('text.introduction', ['user' => "Anonymous"]) }}
                 </div>
 
                 <div class="links">

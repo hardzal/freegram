@@ -36,11 +36,20 @@
 - [x] (3:31:28) Many To Many Relationship
 - [x] (3:46:33) Calculating Followers Count and Following Count
 - [x] (3:48:55) Laravel Telescope
+   -> Debugger Tracker
 - [x] (3:51:44) Showing Posts from Profiles The User Is Following
 - [x] (4:01:03) Pagination with Eloquent
 - [x] (4:03:25) N + 1 Problem & Solution
 - [x] (4:05:21) Make Use of Cache for Expensive Query
 - [x] (4:11:44) Sending Emails to New Registered Users
+
+php artisan make:event NameEvent
+php artisan make:listener NameListener
+
+event(new NameEvent());
+
+php artisan event:generate // automatically create listener that registered in event provider
+
 - [x] (4:21:51) Wrapping Up
 - [x] (4:22:37) Closing Remarks & What's Next In your Learning
 -----------------
@@ -48,7 +57,8 @@
 ## Feature
 - [x] Login 
 - [x] Register
-- [x] CRUD POST
+- [x] CRUD POST 
+  - [x] Image Thumb.
 - [x] CRUD Profile
 - [x] Follow Action
 - [x] Search 
@@ -58,3 +68,9 @@
 - [ ] Direct Message to another account
 - [ ] Block / Report an Account
 - [ ] Admin Role
+
+- [ ] Add Queue 
+- [ ] Add Event+Listeners
+- [x] Add Artisan Commands
+- [x] Add Policy
+- [x] Add Testing

@@ -60,10 +60,10 @@
                         <div class="row mb-3">
                             <div class="col-md-9">
                                 <div class="d-flex align-items-center">
-                                    <div class="pr-3">
-                                        <img src="/storage/{{ $comment->user->profile->avatar }}" alt="" class="w-100 rounded-circle" style="max-width:30px"/>
+                                    <div class="pr-3" style="width:20%">
+                                        <img src="/storage/{{ $comment->user->profile->avatar }}" alt="" class="w-100 rounded-circle" style="max-width:30px;"/>
                                     </div>
-                                    <div>
+                                    <div style="width:80%">
                                             <span class="font-weight-bold">
                                                 <a href="/profile/{{ $comment->user->id }}">
                                                     <span class="text-dark">{{ $comment->user->username }}</span>
@@ -72,6 +72,7 @@
                                         {{ $comment->comment }}
                                     </div>
                                 </div>
+                                <span class="text-muted">{{ $comment->created_at->diffForHumans() }}</span>
                             </div>
                             <div class="col-md-2">
                                 <ul class="navbar-nav ml-3">

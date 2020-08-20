@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes();
-// Route::get('/', 'HomeController@index')->name('home');
+Route::get('/welcome/{lang?}', 'HomeController@welcome');
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'PostsController@index')->name('posts.index');
 
 Route::get('/profile/{user?}', 'ProfilesController@index')->name('profile.index');
@@ -25,6 +26,7 @@ Route::patch('/profile/{user}/update', 'ProfilesController@update')->name('profi
 Route::get('/p/create', 'PostsController@create')->name('post.create');
 Route::post('/p', 'PostsController@store')->name('post.store');
 Route::get('/p/{post}', 'PostsController@show')->name('post.show');
+// Route::get('/p/{post}-{slug}', 'PostsController@show')->name('post.show');
 Route::get('/p/{post}/edit', 'PostsController@edit')->name('post.edit');
 Route::put("/p/{post}", 'PostsController@update')->name('post.update');
 Route::delete("/p/{post}/delete", 'PostsController@destroy')->name('post.delete');
